@@ -7,8 +7,8 @@
         {
             "type": "editor-browser",
             "request": "launch",
-            "name": "Open Untitled-1.html",
-            "url": "file:///d%3A/Ojas/Engineering/GitHub/RockOS/Untitled-1.html"
+            "name": "Open index.html",
+            "url": "file:///d%3A/Ojas/Engineering/GitHub/RockOS/index.html"
         }
     ]
 }
