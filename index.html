@@ -1,10 +1,13 @@
 <!DOCTYPE html>
     <html>
         <body style="background-color: #050505; max-width: 100%; overflow-x: hidden;">
-            <div style="position: relative; background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHQ4MTZ6ajd5ZHNzNXgxNGFsdWhzYWkwdHZvdmJwY3dqa3l6NXJwdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0IynNSckTdPUrBuw/giphy.gif); 
+
+             //Background GIF
+            <div id="homegif" style="position: relative; background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHQ4MTZ6ajd5ZHNzNXgxNGFsdWhzYWkwdHZvdmJwY3dqa3l6NXJwdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0IynNSckTdPUrBuw/giphy.gif); 
             background-size: cover; height: 80vh;">
 
-                <div style="position: absolute; top: 0; left: 0; width: 100%; display: flex; backdrop-filter: blur(20px); 
+                 //TAB
+                <div id="tab" style="position: absolute; top: 0; left: 0; width: 100%; display: flex; backdrop-filter: blur(20px); 
                         background-color: rgba(10, 10, 10, 0.25); color: #fff; justify-content: space-between;">
                         <p style="margin-left: 16px;">
                         RockOS
@@ -15,24 +18,30 @@
                         </p>
                     </div>
 
-                    <div style="position: absolute; display: flex; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                        <h1 style="font-size: 100px; margin: 10px; color: rgb(172, 167, 167); "> 
+                     //Heading
+                    <div id= "heading" style="position: absolute; display: flex; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <h1 style="font-size: 100px; margin: 10px; color: rgb(172, 167, 167); 
+                            cursor: pointer" > 
                             RockOS 
                         </h1>
                     </div>
 
-                    <div id="nametag" style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);
-                        border: solid; border-radius: 50px; width: 500px; height: 60px">
-                        <div id="nametagheader" style="display: flex;">
-                            <img style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; padding: 5px"
-                                 src="wp6254837-the-weeknd-computer-wallpapers.jpg" />
-                            <h1 style="font-size: 25px; color: #fff ; margin: 10px; padding-top: 4px;"> 
-                                Ojas 
-                            </h1>
-                        </div>
-
-                    </div>
                      
+
+                    //Name-tag(movable)
+                    <div id="nametag" style="display: flex; position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);
+                        border: solid; border-radius: 50px; width: 500px; height: 60px">
+
+                        <img style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; padding: 5px"
+                         src="wp6254837-the-weeknd-computer-wallpapers.jpg" />
+
+                        <h1 style="font-size: 25px; color: #fff ; margin: 10px; padding-top: 4px;"> 
+                        Ojas 
+
+                        <p style="cursor: pointer" id="welcomeclose"> Close </p> 
+                        </h1>
+
+                    </div>                     
                 </div>
                 <script src="script.js"></script>
         </body>

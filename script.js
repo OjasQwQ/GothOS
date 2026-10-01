@@ -5,6 +5,11 @@
     }
     setInterval(updateTime, 1000);
 
+    //
+    document.getElementById("heading").addEventListener("click", function() {
+    window.location.href = "OS.html";
+    });
+
     // Make the DIV element draggable:
     dragElement(document.getElementById("nametag"));  
 
@@ -59,3 +64,25 @@
         document.onmousemove = null;
     }
     }
+
+    var welcomeScreen = document.querySelector("#heading")
+
+    function closeWindow(element) {
+        element.style.display = "none"
+    }
+
+    function openWindow(element) {
+    element.style.display = "flex"
+    }
+
+    var welcomeScreenClose = document.querySelector("#welcomeclose")
+    var welcomeScreenOpen = document.querySelector("#welcomeopen")
+
+    welcomeScreenClose.addEventListener("click", function() {
+    closeWindow(welcomeScreen);
+    });
+
+    welcomeScreenOpen.addEventListener("click", function() {
+    openWindow(welcomeScreen);
+    });
+
