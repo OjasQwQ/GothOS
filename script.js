@@ -86,6 +86,7 @@
     function openWindow(element, icon) {
         element.style.display = "flex";
         selectIcon(icon);
+        bringWindowToFront(element);
     }
 
     var musicScreenClose = document.querySelector("#musiclose");
@@ -159,3 +160,83 @@
             openWindow(notesScreen, notesScreenOpen);
         });
     }
+// Bringing the window to the foreground_______________________________________________________________________________________-_-
+
+    var topBar = document.querySelector(".taskbar");
+    var biggestIndex = 1;
+
+    function bringWindowToFront(element) {
+        biggestIndex++;
+        element.style.zIndex = biggestIndex;
+        topBar.style.zIndex = biggestIndex + 1;
+    }
+
+    function addWindowTapHandling(element) {
+        if (element) {
+            element.addEventListener("mousedown", function() {
+                bringWindowToFront(element);
+            });
+        }
+    }
+
+    addWindowTapHandling(musicScreen);
+    addWindowTapHandling(notesScreen);
+
+// Storing Objects ______________________________________________________________________________________________
+
+var content = [
+    {
+    title: "Welcome",
+    content: `
+        <p contenteditable="True" style="word-spacing: 2px; line-height: 1.5;">
+        Hi! I'm Ojas.
+        I'm a student leader and aspiring entrepreneur with a passion for STEM with Mechatronics and Astronomy as my core interests.
+        I enjoy building, exploring & continuously learning through hands-on engineering and problem-solving.
+        Beyond technology, I'm inspired by rock and alternative music, philosophy and other forms of art.
+        </p>
+        `
+    },
+    {
+    title: "New",
+    content: `
+        <p contenteditable="True" style="word-spacing: 2px; line-height: 1.5;">
+        Hi! I'm Ojas.
+        I'm a student leader and aspiring entrepreneur with a passion for STEM with Mechatronics and Astronomy as my core interests.
+        I enjoy building, exploring & continuously learning through hands-on engineering and problem-solving.
+        Beyond technology, I'm inspired by rock and alternative music, philosophy and other forms of art.
+        </p>
+        `
+    }
+
+]
+
+function setNotesContent(index) {
+  var note = content[index];
+  var notesTitle = document.querySelector("#notesTitle");
+  var notesContent = document.querySelector("#notesContent");
+
+  notesTitle.textContent = note.title;
+  notesContent.innerHTML = note.content;
+}
+setNotesContent(0)
+
+function addToSideBar(index) {
+    var sidebar = document.querySelector(".sidebar");
+    var note = content[index];
+    var newDiv = document.createElement("div");
+    newDiv.textContent = note.title;
+    newDiv.addEventListener("click",function() {
+        setNotesContent(index);
+
+    audio.currentTime=0;
+    audio.play()
+    });
+    sidebar.appendChild(newDiv);
+}
+
+for (let i = 0; i < content.length; i++) {
+    addToSideBar(i);
+}
+
+const audio = new Audio('Media/page-flip-01a.mp3');
+

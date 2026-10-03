@@ -95,6 +95,14 @@
 
 .musicwindow-content{
     padding: 16px;
+    background-color: #fff;
+    margin: 6px;
+    border-radius: 12px;
+    width: 520px;
+    height: 480px; 
+    padding: 16px; 
+    font-family: Courier; 
+    display: flex;
 }
 
 .noteswindow{
@@ -104,8 +112,8 @@
     left: 50%;
     z-index: 1;
     flex-direction: column;
-    min-width: 500px;
-    min-height: 400px;
+    width: 500px;
+    height: 400px;
     color: #fff;
     background-color: rgba(20, 20, 20, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -132,5 +140,50 @@
 }
 
 .noteswindow-content{
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
     padding: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sidebar{
+    flex: 0 0 120px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 10px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.sidebar div{
+    padding: 6px;
+    cursor: pointer;
+}
+
+.notes-main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.notes-title{
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    padding: 8px;
+    color: #111;
+    background-color: #8b8a8a;
+    border-radius: 5px;
+}
+
+#notesContent{
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
 }
