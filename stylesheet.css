@@ -46,8 +46,11 @@
     color: #000;
     text-align: center; 
     box-sizing: border-box;
-    top:50px;
-    left:300px;
+    display:flex;
+    top:10%;
+    left:38%;
+    height: 5vh;
+    width: 25vw;
     position: fixed;
 }
 
@@ -196,11 +199,20 @@
     background-repeat: repeat-y;
 }
 
-.Angel{
+.AngelB{
     height: 110px;
     width: 110px;
-    mask-image: radial-gradient(circle,rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%) ;
-    top: 12px;
-    left: 12px;
+    mask-image: radial-gradient(circle,rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+    top: 10px;
+    left: 10px;
+    position: fixed;
+}
+
+.AngelW{
+    height: 110px;
+    width: 110px;
+    mask-image: radial-gradient(circle,rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+    top: 10px;
+    right: 10px;
     position: fixed;
 }

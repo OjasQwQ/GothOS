@@ -242,19 +242,15 @@ const audio = new Audio('Media/page-flip-01a.mp3');
 // Google Search ____________________________________________________________________________________
 
 document.getElementById('googleSearchForm').addEventListener('submit', function(event) {
-    // Prevent the default form behavior from reloading your local OS page
     event.preventDefault(); 
     
-    // Get the text typed into the search bar
     const query = document.getElementById('searchInput').value.trim();
-    
-    // Only search if the user actually typed something
+
     if (query) {
-        // Encodes the query safely and opens Google search in a new tab
         const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-        window.open(searchUrl, '_blank');
-        
-        // Optional: Clear the search input after searching
+        window.open(searchUrl,'_blank',);
         document.getElementById('searchInput').value = '';
     }
 });
+
+
