@@ -188,16 +188,15 @@ var content = [
     {
     title: "Welcome",
     content: `
-        <p contenteditable="True" style="word-spacing: 2px; line-height: 1.5;">
-        Hi! I'm Ojas.
-        I'm a student leader and aspiring entrepreneur with a passion for STEM with Mechatronics and Astronomy as my core interests.
-        I enjoy building, exploring & continuously learning through hands-on engineering and problem-solving.
-        Beyond technology, I'm inspired by rock and alternative music, philosophy and other forms of art.
+        <p contenteditable="True" style="word-spacing: 2px; line-height: 1.5">
+        Welcome to RockOS!
+        This is a Rock/Grunge/Goth theme based webOS (made by a poser) which I've been working on for quite some time now.
         </p>
         `
     },
+
     {
-    title: "New",
+    title: "Introduction",
     content: `
         <p contenteditable="True" style="word-spacing: 2px; line-height: 1.5;">
         Hi! I'm Ojas.
@@ -240,3 +239,22 @@ for (let i = 0; i < content.length; i++) {
 
 const audio = new Audio('Media/page-flip-01a.mp3');
 
+// Google Search ____________________________________________________________________________________
+
+document.getElementById('googleSearchForm').addEventListener('submit', function(event) {
+    // Prevent the default form behavior from reloading your local OS page
+    event.preventDefault(); 
+    
+    // Get the text typed into the search bar
+    const query = document.getElementById('searchInput').value.trim();
+    
+    // Only search if the user actually typed something
+    if (query) {
+        // Encodes the query safely and opens Google search in a new tab
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(searchUrl, '_blank');
+        
+        // Optional: Clear the search input after searching
+        document.getElementById('searchInput').value = '';
+    }
+});
