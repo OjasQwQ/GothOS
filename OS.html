@@ -36,13 +36,33 @@
                 <span>Music</span>
                 <button type="button" id="musiclose" aria-label="Close music window"> x </button>   
             </div>
-            <div>
+
+            <div class="player">
+                <div class="record">
+                    <div class="label">  
+                    </div>                     
+                </div>
+                    <div class="tone-arm">
+                        <div class="control"></div>
+                    </div>
+                    <button class="btn"></button>
+                    <div class="slider-container">
+                        <input
+                        type="range"
+                        class="slider"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value="0.7" />
+                    </div>
+                </div>
+                <audio loop class="my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
+                <script src="music.js"></script>
 
             </div>
-
         </div>
 
-
+        
         <div class="noteswindow" id="noteswindow">
 
             <div class="noteswindow-header" id="noteswindowheader">
@@ -65,6 +85,7 @@
 
 
         <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="musicplayer.css" />
         <script src="script.js"></script>
     </body>
 </html>
