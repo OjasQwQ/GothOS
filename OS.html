@@ -7,10 +7,8 @@
 
         <div class="taskbar">
             <p><img class="logo" id="musicopen" src="Media\Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png" alt="Open music window"></p>
-            <p><img class="logo" id="notesopen" src="Media\guitar.png"></p>
+            <p><img class="logo" id="notesopen" src="Media\antique-leatherbound-book-glimpse-into-history.png"></p>
         </div>
-
-        
 
         <div>
             <form id="googleSearchForm">
@@ -37,27 +35,28 @@
                 <button type="button" id="musiclose" aria-label="Close music window"> x </button>   
             </div>
 
-            <div class="player">
-                <div class="record">
-                    <div class="label">  
-                    </div>                     
-                </div>
-                    <div class="tone-arm">
-                        <div class="control"></div>
+            <div class="player-row">
+                <button type="button" class="backbtn" aria-label="Previous track"> ‹ </button>
+                <div class="player">
+                    <div class="record"></div>
+                        <div class="tone-arm">
+                            <div class="control"></div>
+                        </div>
+                        <button class="btn"></button>
+                        <div class="slider-container">
+                            <input
+                            type="range"
+                            class="slider"
+                            min="0"
+                            max="1"
+                            step="0.1"
+                            value="0.7" />
+                        </div>
                     </div>
-                    <button class="btn"></button>
-                    <div class="slider-container">
-                        <input
-                        type="range"
-                        class="slider"
-                        min="0"
-                        max="1"
-                        step="0.1"
-                        value="0.7" />
-                    </div>
-                </div>
-                <audio loop class="my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
-                <script src="music.js"></script>
+                <button type="button" class="nextbtn" aria-label="Next track"> › </button>
+            </div>
+            <audio loop class="my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
+            <script src="music.js"></script>
 
             </div>
         </div>

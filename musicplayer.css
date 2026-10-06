@@ -1,19 +1,38 @@
+.player-row{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width: 90%;
+    margin: auto;
+}
 .player{
-    background-color: #000000;
+    backdrop-filter: blur(20px); 
+    background-color: rgba(172, 5, 5, 0.25);
+    color: #fff;
     width: 330px;
     height: 190px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    position: relative;
     border-radius: 8px;
-    box-shadow: 0 8px 0 0 #272727;
-
+    box-shadow: 0 8px 0  #272727;
 }
+
+.nextbtn,
+.backbtn{
+    color: white;
+    background: #272727;
+    border: 1px solid #555;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 2;
+    cursor: pointer;
+}
+
 .record{
+    background-image: url(Media/CD1.png);
+    background-size: contain;
     height: 175px;
     width: 175px;
-    background-color: #181312;
     border-radius: 50%;
     position: absolute;
     top: 10px;
@@ -23,13 +42,10 @@
     justify-content: center;
 
 }
+
 .record:before,
 .record::after{
     position: absolute;
-    content: "";
-    border: 5px solid transparent;
-    border-top-color: #2c2424;
-    border-bottom-color: #2c2424;
     border-radius: 50%;
 
 }
@@ -43,14 +59,7 @@
     width: 95px;
 
 }
-.label{
-    background-color: #181312;
-    height: 15px;
-    width:15px;
-    border: 20px solid maroon;
-    border-radius: 50%;
 
-}
 .tone-arm{
     height: 90px;
     width: 5px;
