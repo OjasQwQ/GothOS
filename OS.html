@@ -12,14 +12,17 @@
 
         <div>
             <form id="googleSearchForm">
-                <input 
-                type="text" 
-                name="q"
-                id="searchInput" 
-                placeholder="Google Search" 
-                autocomplete="on" 
-                />
-            </form>
+                <div class= "search-wrapper">
+                    <input 
+                    type="text" 
+                    name="q"
+                    id="searchInput" 
+                    placeholder="Google Search" 
+                    autocomplete="on" 
+                    />
+                    <img class="search icon" src="Media\icons8-search-50.png">
+                </div>
+            </form> 
         </div>
 
         <div>
@@ -42,7 +45,7 @@
                         <div class="tone-arm">
                             <div class="control"></div>
                         </div>
-                        <button class="btn"></button>
+                        <button type="button" class="btn" aria-label="Play playback" aria-pressed="false"></button>
                         <div class="slider-container">
                             <input
                             type="range"
@@ -50,7 +53,8 @@
                             min="0"
                             max="1"
                             step="0.1"
-                            value="0.7" />
+                            value="0.7"
+                            aria-label="Volume" />
                         </div>
                     </div>
                 <button type="button" class="nextbtn" aria-label="Next track"> › </button>

@@ -1,38 +1,68 @@
-let state = false;
-let btn = document.querySelector(".btn");
-let record = document.querySelector(".record");
-let toneArm = document.querySelector(".tone-arm");
-let song = document.querySelector(".my-song");
-let slider = document.querySelector(".slider");
-let nxtbtn= document.querySelector(".nextbtn");
-let backbtn= document.querySelector(".backbtn");
+const btn = document.querySelector(".btn");
+const record = document.querySelector(".record");
+const toneArm = document.querySelector(".tone-arm");
+const song = document.querySelector(".my-song");
+const slider = document.querySelector(".slider");
+const nextButton = document.querySelector(".nextbtn");
+const backButton = document.querySelector(".backbtn");
 
-if (btn && record && toneArm && song && slider) {
-  btn.addEventListener("click", () => {
-    if (state === false) {
-      record.classList.add("on");
-      toneArm.classList.add("play");
-      setTimeout(() => {
-        song.play().catch(() => {});
-      }, 1000);
-    } else {
-      record.classList.remove("on");
-      toneArm.classList.remove("play");
-      song.pause();
+const tracks = [
+  {
+    src: "Media/My_Own_Summer.mp3",
+    cover: "Media/CD1.png"
+  },
+  {
+    src: "Media/Your_face.mp3",
+    cover: "Media/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png"
+  }
+];
+let currentTrack = 0;
+
+if (btn && record && toneArm && song && slider && nextButton && backButton) {
+  const updatePlaybackState = (isPlaying) => {
+    record.classList.toggle("on", isPlaying);
+    toneArm.classList.toggle("play", isPlaying);
+    btn.setAttribute("aria-label", isPlaying ? "Pause playback" : "Play playback");
+    btn.setAttribute("aria-pressed", String(isPlaying));
+  };
+
+  const playSong = () => {
+    song.play().catch((error) => {
+      updatePlaybackState(false);
+      console.error("Unable to play the selected track:", error);
+    });
+  };
+
+  const changeTrack = (direction) => {
+    const wasPlaying = !song.paused;
+    currentTrack = (currentTrack + direction + tracks.length) % tracks.length;
+    song.src = tracks[currentTrack].src;
+    record.style.backgroundImage = `url("${tracks[currentTrack].cover}")`;
+
+    if (wasPlaying) {
+      playSong();
     }
-    state = !state;
+  };
+
+  song.volume = Number(slider.value);
+  updatePlaybackState(false);
+
+  btn.addEventListener("click", () => {
+    if (song.paused) {
+      playSong();
+    } else {
+      song.pause();
+      updatePlaybackState(false);
+    }
   });
 
-  slider.addEventListener("input", (e) => {
-    song.volume = Number(e.target.value);
+  song.addEventListener("play", () => updatePlaybackState(true));
+  song.addEventListener("pause", () => updatePlaybackState(false));
+
+  slider.addEventListener("input", () => {
+    song.volume = Number(slider.value);
   });
+
+  nextButton.addEventListener("click", () => changeTrack(1));
+  backButton.addEventListener("click", () => changeTrack(-1));
 }
-
-nxtbtn.addEventListener("click", () => {
-  record.style.backgroundImage= 'url("Media/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png")';
-  Audio= 'url("Media/My_Own_Summer.mp3")';
-});
-backbtn.addEventListener("click", () => {
-  record.style.backgroundImage= 'url("Media/CD1.png")';
-  Audio= 'url("Media/My_Own_Summer.mp3")';
-});

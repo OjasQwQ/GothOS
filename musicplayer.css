@@ -6,7 +6,6 @@
     margin: auto;
 }
 .player{
-    backdrop-filter: blur(20px); 
     background-color: rgba(172, 5, 5, 0.25);
     color: #fff;
     width: 330px;
@@ -29,7 +28,7 @@
 }
 
 .record{
-    background-image: url(Media/CD1.png);
+    background-image: url("Media/CD1.png");
     background-size: contain;
     height: 175px;
     width: 175px;
@@ -47,8 +46,8 @@
 .record::after{
     position: absolute;
     border-radius: 50%;
-
 }
+
 .record:before{
     height: 135px;
     width:135px;
@@ -119,6 +118,14 @@
     outline: none;
     cursor: pointer;
 
+}
+.btn::before{
+    content: "▶";
+    color: #fff;
+    font-size: 12px;
+}
+.btn[aria-pressed="true"]::before{
+    content: "Ⅱ";
 }
 .slider{
     -webkit-appearance: none;
