@@ -1,32 +1,25 @@
-# RockOS
+# GothOS
 
-A stylish web-based operating system interface built with HTML, CSS, and JavaScript. Features a draggable profile card, live clock, and animated background.
+A web-based operating system interface built with HTML, CSS, and JavaScript on Gothic/Alt Themes.
 
 ## Features
 
-- **Live Clock** - Real-time clock display that updates every second
-- **Draggable Windows** - Click and drag the profile card to move it around
-- **Animated Background** - Dynamic GIF background banner
-- **Blurred Header** - Modern frosted glass effect navbar
-- **Responsive Design** - Works on different screen sizes
-- **Profile Card** - Personalized user profile with links
+1.**Live Clock** - Real-time clock display that updates every second
+2.**Draggable Windows** - Click and drag the profile card to move it around
+3.**Animated Background** - Dynamic GIF background banner
+4.**Blurred Header** - Glassmorphism based taskbar
+6.**Vinyl Player** - An interactive animated Vinyl Player which plays some Alt Music.
 
 ## How to Use
 
 1. Open `index.html` in a web browser
-2. Click and drag the profile card (grab it by the header with the profile picture)
-3. Watch the live clock update in the top-right corner
-4. Click the Instagram link to visit social media
+2. Click on "GothOS" Header on the middle of the screen or the arrow beside it ">"
 
-## Files
+## Main Files
 
-- `index.html` - Main HTML structure
-- `script.js` - JavaScript for dragging functionality and clock updates
-- `wp6254837-the-weeknd-computer-wallpapers.jpg` - Profile image (replace with your own)
-
-## Customization
-
-### Change the Background GIF
-Replace the URL in the `background-image` style:
-```html
-background-image: url(YOUR_GIF_URL_HERE);
+- `index.html` - Homepage HTML structure
+- `OS.html` - Main HTML structure
+- `script.js` - JavaScript for dragging functionality, clock updates, icon changes, paper audio plays, notes app functionality, google search bar fucntionality.
+- `stylesheet.css` - Main CSS for homepage, OS, Google Search, Notes app
+- `musicplayer.css` - CSS for Vinyl Player.
+- `music.js` - Animations and functionality for Vinyl Player.
