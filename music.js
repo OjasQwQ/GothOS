@@ -19,23 +19,24 @@ const tracks = [
 let currentTrack = 0;
 
 if (btn && record && toneArm && song && slider && nextButton && backButton) {
-  const updatePlaybackState = (isPlaying) => {
+  const updatePlaybackState=(isPlaying) => {
     record.classList.toggle("on", isPlaying);
     toneArm.classList.toggle("play", isPlaying);
     btn.setAttribute("aria-label", isPlaying ? "Pause playback" : "Play playback");
     btn.setAttribute("aria-pressed", String(isPlaying));
   };
 
-  const playSong = () => {
+  const playSong= () => {
     song.play().catch((error) => {
       updatePlaybackState(false);
       console.error("Unable to play the selected track:", error);
     });
   };
 
+  //Changes the music track playing && its img src respectively.
   const changeTrack = (direction) => {
-    const wasPlaying = !song.paused;
-    currentTrack = (currentTrack + direction + tracks.length) % tracks.length;
+    const wasPlaying = !song.paused;                                                // Song is playing
+    currentTrack = (currentTrack + direction + tracks.length) % tracks.length;      // Formula to calculate the next track. If on 3rd track, current track = 1 when proceeded
     song.src = tracks[currentTrack].src;
     record.style.backgroundImage = `url("${tracks[currentTrack].cover}")`;
 
