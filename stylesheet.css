@@ -89,6 +89,37 @@
     color: transparent;
 }
 
+.music_popup{
+    display: none;
+    position: fixed;
+    top: 2%;
+    left: 1%;
+    z-index: 10;
+    flex-direction: column;
+    width: 300px;
+    height: 80px;
+    color: #fff;
+    line-height: 50%;
+    background-color: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.music_popup p{
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+}
+
+.song_title_popup{
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
 .musicwindow{
     display: none;
     position: fixed;

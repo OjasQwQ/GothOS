@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <head>
+    
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="musicplayer.css" />
+        
+    </head>
 
     <body style="background-size: cover; background-color: #0e0d0d; overflow-x: hidden; 
     background-image: url('Media/wallpaper.jpeg');" >
@@ -60,10 +66,15 @@
                 <button type="button" class="nextbtn" aria-label="Next track"> › </button>
             </div>
             <audio loop class="my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
-            <script src="music.js"></script>
 
             </div>
         </div>
+
+        <div id="music_popup" class="music_popup">
+            <p> Now Playing: </p>
+            <h1 class="song_title_popup">_</h1>
+        </div>
+
 
         
         <div class="noteswindow" id="noteswindow">
@@ -84,11 +95,7 @@
                 </div>
                 
             </div>
-
-
-
-        <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-        <link rel="stylesheet" type="text/css" href="musicplayer.css" />
-        <script src="script.js"></script>
+            <script src="music.js"></script>
+            <script src="script.js"></script>
     </body>
 </html>
