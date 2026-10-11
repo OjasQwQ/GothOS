@@ -1,18 +1,23 @@
 .taskbar {
-    position: absolute;
-    bottom:0;
-    left: 0;
+    position: fixed;
+    bottom:15px;
     z-index: 2;
-    width: 100%;
+    height: fit-content;
+    width: fit-content;
+    left:0;
+    right:0;
+    margin: 0 auto;
     display: flex;
-    backdrop-filter: blur();
+    backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.25);
     color: #fff;
+    border: 2px solid black;
+    border-radius: 15px;
     justify-content:center;
     align-items: center;
 }
 .taskbar p {
-    margin: 0;
+    margin: 2px;
 }
 .logo{
     object-fit: contain;
@@ -55,8 +60,8 @@
     position: absolute;
     right: 10px;
     top: 50%;
-    width: 13px;
-    height: 13px;
+    width: 20px;
+    height: 20px;
     transform: translateY(-50%);
     pointer-events: none;
     opacity: 0.6;
@@ -72,7 +77,7 @@
     border: 1px solid #ccc;
     background-color: #fff;
     color: #000;
-    text-align: center; 
+     
     box-sizing: border-box;
     border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -88,6 +93,17 @@
 #searchInput:focus::placeholder{
     color: transparent;
 }
+
+#searchInput:not(:focus)::placeholder{
+    width:12ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid black;
+    animation: type 4s steps(12,end) infinite, blink-caret 0.8s step-end infinite;
+}
+@keyframes type  { 0%,100% {width:0}
+                    40%,100%{width:12ch}}
+@keyframes blink-caret { from, to{border-color:transparent} 50% {border-color: grey;} }
 
 .music_popup{
     display: none;
@@ -130,7 +146,7 @@
     min-width: 500px;
     min-height: 400px;
     color: #fff;
-    background-color: rgba(20, 20, 20, 20);
+    background-color: rgba(20, 20, 20, 0);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -155,15 +171,13 @@
 }
 
 .musicwindow-content{
-    padding: 16px;
-    background-color: #fff;
-    margin: 6px;
-    border-radius: 12px;
-    width: 520px;
-    height: 480px; 
-    padding: 16px; 
-    font-family: Courier; 
     display: flex;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: rgba(20, 20, 20, 20);
 }
 
 .noteswindow{

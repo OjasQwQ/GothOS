@@ -11,12 +11,12 @@ const music_popup = document.querySelector(".music_popup");
 const tracks = [
   {
     src: "Media/My_Own_Summer.mp3",
-    cover: "Media/CD1.png",
+    cover: "Media/deftones-CD.svg",
     name: "My Own Summer"
   },
   {
     src: "Media/Your_face.mp3",
-    cover: "Media/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png",
+    cover: "Media/CD1.svg",
     name: "Your Face"
   }
 ];
