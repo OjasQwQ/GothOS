@@ -8,7 +8,8 @@
     </head>
 
     <body style="background-size: cover; background-color: #0e0d0d; overflow-x: hidden; 
-    background-image: url('Media/wallpaper.jpeg');" >
+    background-image: url('Media/wallpaper.jpeg'); background-repeat: no-repeat;" >
+    <canvas id="visualizer"></canvas>
 
 
         <div class="taskbar">
@@ -66,7 +67,7 @@
                         </div>
                     <button type="button" class="nextbtn" aria-label="Next track"> › </button>
                 </div>
-                <audio loop class="my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
+                <audio loop class="my-song" id= "my-song" src="Media/My_Own_Summer.mp3" preload="auto"></audio>
                 </div>
             </div> 
             
@@ -99,5 +100,6 @@
             </div>
             <script src="music.js"></script>
             <script src="script.js"></script>
+            <script src="visualizer.js"></script>
     </body>
 </html>

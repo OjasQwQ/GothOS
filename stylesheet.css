@@ -40,6 +40,17 @@
     cursor: pointer;
 }
 
+canvas#visualizer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:50%;
+    z-index:-1;
+    background: transparent;
+}
+
 #googleSearchForm {
     position: fixed;
     top: 20px;

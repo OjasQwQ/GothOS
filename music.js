@@ -48,6 +48,12 @@ if (btn && record && toneArm && song && slider && nextButton && backButton) {
   };
 
   const playSong= () => {
+    try {
+      window.connectAudio(song);
+    } catch (error) {
+      console.error("Unable to connect the visualizer:", error);
+    }
+
     song.play().catch((error) => {
       updatePlaybackState(false);
       console.error("Unable to play the selected track:", error);
