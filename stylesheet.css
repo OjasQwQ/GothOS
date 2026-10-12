@@ -298,3 +298,123 @@ canvas#visualizer{
     right: 10px;
     position: fixed;
 }
+
+.calc-window{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    flex-direction: column;
+    width: 420px;
+    min-height: 480px;
+    color: #fff;
+    background-color: rgba(20, 20, 20, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+}
+.calcwindow-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: move;
+}
+
+.calcwindow-header button{
+    color: #fff;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calcwindow-content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    min-height: 0;
+    padding: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(8, 8, 8, 0.96));
+}
+
+.calcwindow-content .display {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 120px;
+    padding: 18px 16px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.calcwindow-content .previous-operand,
+.calcwindow-content .current-operand {
+    width: 100%;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.calcwindow-content .previous-operand {
+    min-height: 28px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.calcwindow-content .current-operand {
+    min-height: 52px;
+    font-size: 38px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.calcwindow-content .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.calcwindow-content .btn {
+    height: 56px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.calcwindow-content .btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.calcwindow-content .btn:active {
+    transform: scale(0.98);
+}
+
+.calcwindow-content .function {
+    background-color: rgba(184, 139, 78, 0.8);
+}
+
+.calcwindow-content .operator {
+    background-color: rgba(240, 151, 59, 0.8);
+}
+
+.calcwindow-content .equals {
+    background-color: rgba(82, 180, 110, 0.8);
+}
+
+.calcwindow-content .zero {
+    grid-column: span 2;
+}

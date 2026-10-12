@@ -160,6 +160,228 @@
             openWindow(notesScreen, notesScreenOpen);
         });
     }
+
+// Calculator Logic _________________________________________________________________________________________________________
+    var calcScreen = document.getElementById("calc-window");
+    var currentOperandElement = document.getElementById("current-operand");
+    var previousOperandElement = document.getElementById("previous-operand");
+    var calcState = {
+        previousOperand: "",
+        currentOperand: "0",
+        operator: null,
+        shouldResetScreen: false
+    };
+
+    function formatCalculatorResult(value) {
+        if (!Number.isFinite(value)) {
+            return "Error";
+        }
+
+        return Number(value.toFixed(12)).toString();
+    }
+
+    function updateCalculatorDisplay() {
+        if (previousOperandElement) {
+            previousOperandElement.textContent = calcState.previousOperand && calcState.operator
+                ? calcState.previousOperand + " " + calcState.operator
+                : "";
+        }
+
+        if (currentOperandElement) {
+            currentOperandElement.textContent = calcState.currentOperand || "0";
+        }
+    }
+
+    function clearScreen() {
+        calcState.previousOperand = "";
+        calcState.currentOperand = "0";
+        calcState.operator = null;
+        calcState.shouldResetScreen = false;
+        updateCalculatorDisplay();
+    }
+
+    function deleteLast() {
+        if (calcState.shouldResetScreen) {
+            clearScreen();
+            return;
+        }
+
+        if (calcState.currentOperand === "" || calcState.currentOperand === "0") {
+            calcState.currentOperand = "0";
+            updateCalculatorDisplay();
+            return;
+        }
+
+        calcState.currentOperand = calcState.currentOperand.slice(0, -1);
+        if (calcState.currentOperand === "") {
+            calcState.currentOperand = "0";
+        }
+
+        updateCalculatorDisplay();
+    }
+
+    function appendNumber(number) {
+        if (calcState.shouldResetScreen) {
+            calcState.currentOperand = "";
+            calcState.shouldResetScreen = false;
+        }
+
+        if (number === "0" && calcState.currentOperand === "0") {
+            return;
+        }
+
+        if (calcState.currentOperand === "0") {
+            calcState.currentOperand = number;
+        } else {
+            calcState.currentOperand += number;
+        }
+
+        updateCalculatorDisplay();
+    }
+
+    function appendDecimal() {
+        if (calcState.shouldResetScreen) {
+            calcState.currentOperand = "0";
+            calcState.shouldResetScreen = false;
+        }
+
+        if (calcState.currentOperand.includes(".")) {
+            return;
+        }
+
+        calcState.currentOperand = calcState.currentOperand ? calcState.currentOperand + "." : "0.";
+        updateCalculatorDisplay();
+    }
+
+    function appendOperator(value) {
+        if (calcState.currentOperand === "" && !calcState.previousOperand && value !== "-") {
+            return;
+        }
+
+        if (calcState.currentOperand === "" && value === "-") {
+            calcState.currentOperand = "-";
+            updateCalculatorDisplay();
+            return;
+        }
+
+        if (calcState.previousOperand && calcState.operator && !calcState.shouldResetScreen) {
+            calculate();
+        }
+
+        calcState.previousOperand = calcState.currentOperand || "0";
+        calcState.operator = value;
+        calcState.currentOperand = "";
+        calcState.shouldResetScreen = false;
+        updateCalculatorDisplay();
+    }
+
+    function calculate() {
+        if (!calcState.operator || calcState.currentOperand === "" || calcState.previousOperand === "") {
+            return;
+        }
+
+        var previousValue = parseFloat(calcState.previousOperand);
+        var currentValue = parseFloat(calcState.currentOperand);
+
+        if (Number.isNaN(previousValue) || Number.isNaN(currentValue)) {
+            return;
+        }
+
+        var result;
+
+        switch (calcState.operator) {
+            case "+":
+                result = previousValue + currentValue;
+                break;
+            case "-":
+                result = previousValue - currentValue;
+                break;
+            case "*":
+                result = previousValue * currentValue;
+                break;
+            case "/":
+                result = currentValue === 0 ? Number.POSITIVE_INFINITY : previousValue / currentValue;
+                break;
+            case "%":
+                result = currentValue === 0 ? Number.NaN : previousValue % currentValue;
+                break;
+            default:
+                return;
+        }
+
+        calcState.currentOperand = formatCalculatorResult(result);
+        calcState.previousOperand = "";
+        calcState.operator = null;
+        calcState.shouldResetScreen = true;
+        updateCalculatorDisplay();
+    }
+
+    window.clearScreen = clearScreen;
+    window.deleteLast = deleteLast;
+    window.appendNumber = appendNumber;
+    window.appendDecimal = appendDecimal;
+    window.appendOperator = appendOperator;
+    window.calculate = calculate;
+
+    updateCalculatorDisplay();
+
+// Calculator Window (Dragability)____________________________________________________________________________________________
+    var calcScreenHeader = document.getElementById("calcwindow-header");
+    if (calcScreen && calcScreenHeader) {
+        dragElement(calcScreen, calcScreenHeader);
+    }
+
+    function dragElement(element, handle) {
+        var initialX = 0;
+        var initialY = 0;
+        var currentX = 0;
+        var currentY = 0;
+
+        handle.onmousedown = startDragging;
+
+        function startDragging(e) {
+            e = e || window.event;
+            e.preventDefault();
+            initialX = e.clientX;
+            initialY = e.clientY;
+            document.onmouseup = stopDragging;
+            document.onmousemove = moveElement;
+        }
+
+        function moveElement(e) {
+            e = e || window.event;
+            e.preventDefault();
+            currentX = initialX - e.clientX;
+            currentY = initialY - e.clientY;
+            initialX = e.clientX;
+            initialY = e.clientY;
+            element.style.top = (element.offsetTop - currentY) + "px";
+            element.style.left = (element.offsetLeft - currentX) + "px";
+        }
+
+        function stopDragging() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+// Calculator Window ( Openning & Closing)______________________________________________________________________________________
+
+    var calcScreenClose = document.querySelector("#calcclose");
+    var calcScreenOpen = document.querySelector("#calcopen");
+
+    if (calcScreenClose && calcScreen) {
+        calcScreenClose.addEventListener("click", function() {
+            closeWindow(calcScreen, calcScreenOpen);
+        });
+    }
+    if (calcScreenOpen && calcScreen) {
+        calcScreenOpen.addEventListener("click", function() {
+            openWindow(calcScreen, calcScreenOpen);
+        });
+    }
+
+
 // Bringing the window to the foreground_______________________________________________________________________________________-_-
 
     var topBar = document.querySelector(".taskbar");
@@ -181,6 +403,7 @@
 
     addWindowTapHandling(musicScreen);
     addWindowTapHandling(notesScreen);
+    addWindowTapHandling(calcScreen);
 
 // Storing Objects ______________________________________________________________________________________________
 
