@@ -341,13 +341,16 @@ canvas#visualizer{
     padding: 16px;
     overflow: hidden;
     box-sizing: border-box;
-    background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(8, 8, 8, 0.96));
+    background: black;
 }
 
-.calcwindow-content .display {
+.calc-display {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
     min-height: 120px;
     padding: 18px 16px;
     background-color: rgba(255, 255, 255, 0.06);
@@ -356,8 +359,8 @@ canvas#visualizer{
     overflow: hidden;
 }
 
-.calcwindow-content .previous-operand,
-.calcwindow-content .current-operand {
+.calc-display .previous-operand,
+.calc-display .current-operand {
     width: 100%;
     text-align: right;
     overflow: hidden;
@@ -365,26 +368,26 @@ canvas#visualizer{
     white-space: nowrap;
 }
 
-.calcwindow-content .previous-operand {
+.calc-display .previous-operand {
     min-height: 28px;
     font-size: 18px;
     color: rgba(255, 255, 255, 0.75);
 }
 
-.calcwindow-content .current-operand {
+.calc-display .current-operand {
     min-height: 52px;
     font-size: 38px;
     font-weight: 600;
     color: #fff;
 }
 
-.calcwindow-content .buttons {
+.calc-buttons {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.calcwindow-content .btn {
+.calc-btn {
     height: 56px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -395,26 +398,32 @@ canvas#visualizer{
     transition: transform 0.1s ease, background-color 0.15s ease;
 }
 
-.calcwindow-content .btn:hover {
+.calc-btn:hover {
     background-color: rgba(255, 255, 255, 0.12);
 }
 
-.calcwindow-content .btn:active {
+.calc-btn:active {
     transform: scale(0.98);
 }
 
-.calcwindow-content .function {
+.calc-btn.calc-function {
     background-color: rgba(184, 139, 78, 0.8);
 }
 
-.calcwindow-content .operator {
+.calc-btn.calc-operator {
     background-color: rgba(240, 151, 59, 0.8);
 }
 
-.calcwindow-content .equals {
+.calc-btn.calc-equals {
     background-color: rgba(82, 180, 110, 0.8);
 }
 
-.calcwindow-content .zero {
+.calc-btn.calc-zero {
     grid-column: span 2;
+}
+
+.calcwindow-content .calc-buttons > .calc-btn {
+    position: static;
+    width: 100%;
+    box-sizing: border-box;
 }

@@ -162,7 +162,8 @@
     }
 
 // Calculator Logic _________________________________________________________________________________________________________
-    var calcScreen = document.getElementById("calc-window");
+    
+
     var currentOperandElement = document.getElementById("current-operand");
     var previousOperandElement = document.getElementById("previous-operand");
     var calcState = {
@@ -326,6 +327,7 @@
     updateCalculatorDisplay();
 
 // Calculator Window (Dragability)____________________________________________________________________________________________
+    var calcScreen = document.getElementById("calc-window");
     var calcScreenHeader = document.getElementById("calcwindow-header");
     if (calcScreen && calcScreenHeader) {
         dragElement(calcScreen, calcScreenHeader);

@@ -106,34 +106,34 @@
                 <button type="button" id="calcclose" aria-label="Close Calculator Window"> x </button>
             </div>
             <div class="calcwindow-content">
-                <div class="display">
+                <div class="calc-display">
                     <div class="previous-operand" id="previous-operand"></div>
                     <div class="current-operand" id="current-operand"></div>
                 </div>
-                <div class="buttons">
-                    <button class="btn function" onclick="clearScreen()">C</button>
-                    <button class="btn function" onclick="deleteLast()">⌫</button>
-                    <button class="btn function" onclick="appendOperator('%')">%</button>
-                    <button class="btn operator" onclick="appendOperator('/')">÷</button>
+                <div class="calc-buttons">
+                    <button class="calc-btn calc-function" onclick="clearScreen()">C</button>
+                    <button class="calc-btn calc-function" onclick="deleteLast()">⌫</button>
+                    <button class="calc-btn calc-function" onclick="appendOperator('%')">%</button>
+                    <button class="calc-btn calc-operator" onclick="appendOperator('/')">÷</button>
 
-                    <button class="btn" onclick="appendNumber('7')">7</button>
-                    <button class="btn" onclick="appendNumber('8')">8</button>
-                    <button class="btn" onclick="appendNumber('9')">9</button>
-                    <button class="btn operator" onclick="appendOperator('*')">×</button>
+                    <button class="calc-btn" onclick="appendNumber('7')">7</button>
+                    <button class="calc-btn" onclick="appendNumber('8')">8</button>
+                    <button class="calc-btn" onclick="appendNumber('9')">9</button>
+                    <button class="calc-btn calc-operator" onclick="appendOperator('*')">×</button>
 
-                    <button class="btn" onclick="appendNumber('4')">4</button>
-                    <button class="btn" onclick="appendNumber('5')">5</button>
-                    <button class="btn" onclick="appendNumber('6')">6</button>
-                    <button class="btn operator" onclick="appendOperator('-')">-</button>
+                    <button class="calc-btn" onclick="appendNumber('4')">4</button>
+                    <button class="calc-btn" onclick="appendNumber('5')">5</button>
+                    <button class="calc-btn" onclick="appendNumber('6')">6</button>
+                    <button class="calc-btn calc-operator" onclick="appendOperator('-')">-</button>
 
-                    <button class="btn" onclick="appendNumber('1')">1</button>
-                    <button class="btn" onclick="appendNumber('2')">2</button>
-                    <button class="btn" onclick="appendNumber('3')">3</button>
-                    <button class="btn operator" onclick="appendOperator('+')">+</button>
+                    <button class="calc-btn" onclick="appendNumber('1')">1</button>
+                    <button class="calc-btn" onclick="appendNumber('2')">2</button>
+                    <button class="calc-btn" onclick="appendNumber('3')">3</button>
+                    <button class="calc-btn calc-operator" onclick="appendOperator('+')">+</button>
 
-                    <button class="btn zero" onclick="appendNumber('0')">0</button>
-                    <button class="btn" onclick="appendDecimal('.')">.</button>
-                    <button class="btn equals" onclick="calculate()">=</button>
+                    <button class="calc-btn calc-zero" onclick="appendNumber('0')">0</button>
+                    <button class="calc-btn" onclick="appendDecimal('.')">.</button>
+                    <button class="calc-btn calc-equals" onclick="calculate()">=</button>
                 </div>
             </div>
         </div>
