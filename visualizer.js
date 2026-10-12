@@ -70,7 +70,6 @@ function draw() {
     }
 }
 
-// Start drawing
 draw();
 
 // Expose to window

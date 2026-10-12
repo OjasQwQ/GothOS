@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">Spellbound — post-punk inspired record</title>
+  <desc id="desc">A black vinyl record with a distressed violet and black abstract face motif, pale spindle hole, and understated circular grooves.</desc>
+  <defs>
+    <radialGradient id="vinyl" cx="38%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#28202b"/>
+      <stop offset=".38" stop-color="#100d12"/>
+      <stop offset=".8" stop-color="#030304"/>
+      <stop offset="1" stop-color="#211923"/>
+    </radialGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2=".85" y2="1">
+      <stop offset="0" stop-color="#8b2d91"/>
+      <stop offset=".48" stop-color="#61206c"/>
+      <stop offset="1" stop-color="#32103b"/>
+    </linearGradient>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency=".045 .16" numOctaves="2" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .18"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <clipPath id="disc"><circle cx="250" cy="250" r="239"/></clipPath>
+    <clipPath id="label"><circle cx="250" cy="250" r="151"/></clipPath>
+  </defs>
+
+  <circle cx="250" cy="250" r="244" fill="#030303"/>
+  <circle cx="250" cy="250" r="239" fill="url(#vinyl)" stroke="#5d4c5c" stroke-opacity=".6"/>
+
+  <!-- Record grooves -->
+  <g clip-path="url(#disc)" fill="none" stroke="#d8c7dc">
+    <circle cx="250" cy="250" r="163" stroke-opacity=".14"/>
+    <circle cx="250" cy="250" r="169" stroke-opacity=".08"/>
+    <circle cx="250" cy="250" r="176" stroke-opacity=".15"/>
+    <circle cx="250" cy="250" r="183" stroke-opacity=".07"/>
+    <circle cx="250" cy="250" r="190" stroke-opacity=".13"/>
+    <circle cx="250" cy="250" r="197" stroke-opacity=".08"/>
+    <circle cx="250" cy="250" r="204" stroke-opacity=".13"/>
+    <circle cx="250" cy="250" r="211" stroke-opacity=".07"/>
+    <circle cx="250" cy="250" r="218" stroke-opacity=".12"/>
+    <circle cx="250" cy="250" r="225" stroke-opacity=".07"/>
+    <circle cx="250" cy="250" r="232" stroke-opacity=".1"/>
+  </g>
+
+  <!-- Violet sleeve-art inspired label -->
+  <g clip-path="url(#label)">
+    <circle cx="250" cy="250" r="151" fill="#08070a"/>
+    <path d="M88 179 L126 150 L183 163 L219 142 L278 151 L325 138 L378 175
+             L362 222 L386 262 L355 309 L378 354 L320 372 L275 347 L225 370
+             L175 344 L132 356 L119 309 L88 279 L108 235 Z"
+          fill="url(#purple)" filter="url(#rough)"/>
+    <!-- distressed top silhouette -->
+    <path d="M117 186 L136 177 L150 188 L170 180 L186 193 L204 181 L221 191
+             L240 178 L260 191 L278 180 L297 191 L316 177 L336 188 L356 183
+             L372 204 L344 211 L323 203 L300 216 L275 207 L250 216 L228 205
+             L205 215 L181 204 L157 213 L133 204 Z"
+          fill="#8b3292" opacity=".94" filter="url(#rough)"/>
+
+    <!-- graphic eyes -->
+    <path d="M107 226 Q153 197 201 224 Q171 245 137 240 Z" fill="#050407"/>
+    <path d="M299 224 Q345 197 393 226 L363 240 Q329 245 299 224 Z" fill="#050407"/>
+    <path d="M116 224 Q157 211 190 226 Q160 233 135 231 Z" fill="#6d2676"/>
+    <path d="M310 226 Q343 211 384 224 Q365 233 340 231 Z" fill="#6d2676"/>
+    <ellipse cx="155" cy="228" rx="12" ry="8" fill="#030304"/>
+    <ellipse cx="345" cy="228" rx="12" ry="8" fill="#030304"/>
+
+    <!-- shadowed nose and moustache-like abstract strokes -->
+    <path d="M218 226 L236 247 L220 271 L198 283 L221 287 L242 276 L250 252
+             L260 276 L281 287 L303 283 L280 270 L265 246 L281 226 L259 236 L250 250 L240 236 Z"
+          fill="#050407"/>
+    <path d="M112 273 Q147 245 190 260 L211 280 L180 300 L145 294 L124 318 Z" fill="#050407"/>
+    <path d="M388 273 Q353 245 310 260 L289 280 L320 300 L355 294 L376 318 Z" fill="#050407"/>
+    <path d="M131 287 L173 276 L192 287 L160 293 Z M369 287 L327 276 L308 287 L340 293 Z"
+          fill="#17101b"/>
+
+    <!-- cheek / jaw blocks -->
+    <path d="M131 304 L177 298 L205 319 L197 359 L157 369 L131 342 Z" fill="#070609"/>
+    <path d="M369 304 L323 298 L295 319 L303 359 L343 369 L369 342 Z" fill="#070609"/>
+    <path d="M208 312 Q250 328 292 312 L281 362 L250 381 L219 362 Z" fill="#171019"/>
+    <path d="M227 342 L250 351 L273 342 L263 361 L250 367 L237 361 Z" fill="#050407"/>
+
+    <!-- grain and wear -->
+    <rect x="96" y="96" width="308" height="308" fill="#a89ca9" opacity=".17" filter="url(#grain)"/>
+    <circle cx="250" cy="250" r="150" fill="none" stroke="#b75abb" stroke-opacity=".25"/>
+  </g>
+
+  <circle cx="250" cy="250" r="155" fill="none" stroke="#a64aae" stroke-opacity=".4" stroke-width="1.2"/>
+  <circle cx="250" cy="250" r="239" fill="none" stroke="#c7a9ca" stroke-opacity=".19"/>
+  <!-- Pale centre hole -->
+  <circle cx="250" cy="250" r="17" fill="#d9d6d7"/>
+  <circle cx="250" cy="250" r="12" fill="#f2f0ed"/>
+  <circle cx="250" cy="250" r="4" fill="#c9c5ca"/>
+</svg>

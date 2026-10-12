@@ -16,8 +16,28 @@ const tracks = [
   },
   {
     src: "Media/Your_face.mp3",
-    cover: "Media/CD1.svg",
+    cover: "Media/your-name-wisp-inspired-record.svg",
     name: "Your Face"
+  },
+  {
+    src: "Media/Siouxsie And The Banshees - Spellbound (Official Music Video).mp3",
+    cover: "Media/spellbound-siouxsie-inspired-record.svg",
+    name: "Spellbound",
+  },
+  {
+    src: "Media/Bite My Hip.mp3",
+    cover: "Media/bite-my-hip-bauhaus-inspired-record.svg",
+    name: "Bite My Hip",
+  },
+  {
+    src: "Media/I Don't Wanna Be Me.mp3",
+    cover: "Media/i-dont-wanna-be-me-type-o-negative-inspired-record.svg",
+    name: "I don't Wanna Be Me",
+  },
+  {
+    src: "Media/Type O Negative - Love You To Death [OFFICIAL VIDEO].mp3",
+    cover: "Media/love-you-to-death-type-o-negative-inspired-record.svg",
+    name: "Love You To Death",
   }
 ];
 let currentTrack = 0;

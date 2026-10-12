@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 850" role="img" aria-labelledby="title desc">
+<title id="title">Gothic calculator</title>
+<desc id="desc">A black gothic calculator with ornamental pointed frame, bat-wing flourishes, a red 666 display, dark beveled keys, and crimson gothic accents.</desc>
+<defs>
+  <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#29282a"/><stop offset=".25" stop-color="#0b0b0d"/>
+    <stop offset=".65" stop-color="#19181b"/><stop offset="1" stop-color="#030304"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="0.9" y2="1">
+    <stop offset="0" stop-color="#777176"/><stop offset=".22" stop-color="#29272b"/>
+    <stop offset=".55" stop-color="#080809"/><stop offset="1" stop-color="#4c4249"/>
+  </linearGradient>
+  <linearGradient id="key" x1="0" y1="0" x2=".2" y2="1">
+    <stop offset="0" stop-color="#343236"/><stop offset=".18" stop-color="#171619"/>
+    <stop offset=".78" stop-color="#09090b"/><stop offset="1" stop-color="#242125"/>
+  </linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#170609"/><stop offset="1" stop-color="#050304"/>
+  </linearGradient>
+  <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+    <feOffset dy="5"/>
+    <feComponentTransfer><feFuncA type="linear" slope=".7"/></feComponentTransfer>
+    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <g id="thorn" fill="none" stroke="#7d202b" stroke-width="2" stroke-linejoin="round">
+    <path d="M0 -28 L5 -7 L17 0 L5 5 L0 28 L-5 5 L-17 0 L-5 -7 Z"/>
+    <path d="M0 -18 V18 M-10 0 H10" stroke="#b44850" stroke-width="1.2"/>
+  </g>
+  <g id="key">
+    <rect width="72" height="67" rx="10" fill="#050506" stroke="#030304" stroke-width="3"/>
+    <rect x="2" y="1" width="68" height="62" rx="9" fill="url(#key)" stroke="#4d494f" stroke-width="1.2"/>
+    <path d="M10 5 Q17 2 27 3" fill="none" stroke="#a49ba0" stroke-opacity=".55" stroke-width="1.4"/>
+    <path d="M5 55 Q24 63 62 57" fill="none" stroke="#000" stroke-opacity=".8" stroke-width="2"/>
+  </g>
+  <style>
+    .legend{font-family:Georgia,'Times New Roman',serif;fill:#e8e1df;text-anchor:middle}
+    .red{fill:#bd3a45}
+    .line{fill:none;stroke:#81777d;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+</defs>
+
+<!-- Main silhouette -->
+<g filter="url(#shadow)">
+  <path d="M115 112 L190 102 L255 76 L300 22 L345 76 L410 102 L485 112
+           Q512 120 512 153 L512 712 Q510 745 480 757 L410 771 L345 792
+           L300 830 L255 792 L190 771 L120 757 Q88 745 88 712 L88 153 Q88 120 115 112Z"
+        fill="url(#edge)" stroke="#020203" stroke-width="8"/>
+  <path d="M126 129 L194 119 L257 93 L300 49 L343 93 L406 119 L474 129
+           Q493 136 493 160 L493 703 Q491 731 465 740 L402 751 L340 771
+           L300 800 L260 771 L198 751 L135 740 Q107 731 107 703 L107 160 Q107 136 126 129Z"
+        fill="url(#body)" stroke="#494349" stroke-width="2"/>
+</g>
+
+<!-- Winged gothic shoulders -->
+<g fill="#111013" stroke="#5a5058" stroke-width="2" stroke-linejoin="round">
+  <path d="M111 175 Q75 130 42 145 Q60 163 44 184 Q32 201 48 229 Q55 247 69 253
+           Q56 222 77 205 Q92 192 111 215 L126 194 Z"/>
+  <path d="M489 175 Q525 130 558 145 Q540 163 556 184 Q568 201 552 229 Q545 247 531 253
+           Q544 222 523 205 Q508 192 489 215 L474 194 Z"/>
+  <path d="M110 176 Q80 175 57 156 M105 191 Q81 198 65 224 M490 176 Q520 175 543 156 M495 191 Q519 198 535 224" fill="none" stroke="#827781"/>
+  <path d="M95 151 Q126 132 150 151 L133 165 L148 180 L121 176 L111 196 L99 177 L79 181 L91 164Z"/>
+  <path d="M505 151 Q474 132 450 151 L467 165 L452 180 L479 176 L489 196 L501 177 L521 181 L509 164Z"/>
+</g>
+
+<!-- Top crest -->
+<path d="M300 35 L316 81 L345 109 L318 119 L300 151 L282 119 L255 109 L284 81 Z"
+      fill="#171317" stroke="#65535c" stroke-width="2"/>
+<use href="#thorn" transform="translate(300 96) scale(.78)"/>
+
+<!-- Display frame -->
+<rect x="122" y="171" width="356" height="164" rx="19" fill="#020203" stroke="#5a5159" stroke-width="5"/>
+<rect x="133" y="182" width="334" height="142" rx="13" fill="url(#screen)" stroke="#261319" stroke-width="2"/>
+<path d="M144 192 H456" stroke="#7b1e2a" stroke-opacity=".35"/>
+<!-- Seven segment digits -->
+<g fill="#9f1828" stroke="#d23b4a" stroke-opacity=".28" stroke-width="1">
+  <g transform="translate(266 204)">
+    <path d="M8 0 H39 L31 8 H4Z"/><path d="M2 5 L8 11 V37 L1 43Z"/>
+    <path d="M39 12 L34 18 V39 L40 34Z"/><path d="M7 41 H32 L26 48 H5Z"/>
+    <path d="M1 47 L7 42 V65 L1 71Z"/><path d="M34 46 L40 41 V65 L34 70Z"/>
+    <path d="M7 73 H32 L25 81 H4Z"/>
+  </g>
+  <g transform="translate(320 204)">
+    <path d="M8 0 H39 L31 8 H4Z"/><path d="M2 5 L8 11 V37 L1 43Z"/>
+    <path d="M39 12 L34 18 V39 L40 34Z"/><path d="M7 41 H32 L26 48 H5Z"/>
+    <path d="M1 47 L7 42 V65 L1 71Z"/><path d="M34 46 L40 41 V65 L34 70Z"/>
+    <path d="M7 73 H32 L25 81 H4Z"/>
+  </g>
+  <g transform="translate(374 204)">
+    <path d="M8 0 H39 L31 8 H4Z"/><path d="M2 5 L8 11 V37 L1 43Z"/>
+    <path d="M39 12 L34 18 V39 L40 34Z"/><path d="M7 41 H32 L26 48 H5Z"/>
+    <path d="M1 47 L7 42 V65 L1 71Z"/><path d="M34 46 L40 41 V65 L34 70Z"/>
+    <path d="M7 73 H32 L25 81 H4Z"/>
+  </g>
+</g>
+<text x="151" y="205" font-family="Georgia,serif" font-size="9" fill="#6e4b51" letter-spacing="1">NOCTURNE / CALCULATOR</text>
+
+<!-- Decorative side spines -->
+<g>
+  <use href="#thorn" transform="translate(119 390) scale(.55)"/>
+  <use href="#thorn" transform="translate(481 390) scale(.55)"/>
+  <use href="#thorn" transform="translate(119 665) scale(.55)"/>
+  <use href="#thorn" transform="translate(481 665) scale(.55)"/>
+  <path d="M117 420 V630 M483 420 V630" stroke="#5e252e" stroke-width="1.4"/>
+  <path d="M126 430 V620 M474 430 V620" stroke="#766872" stroke-opacity=".6"/>
+</g>
+
+<!-- Keypad -->
+<g>
+  <!-- row 1 -->
+  <g transform="translate(137 360)"><use href="#key"/><text class="legend" x="36" y="41" font-size="20">MC</text></g>
+  <g transform="translate(215 360)"><use href="#key"/><text class="legend" x="36" y="41" font-size="20">MR</text></g>
+  <g transform="translate(293 360)"><use href="#key"/><text class="legend" x="36" y="41" font-size="20">M+</text></g>
+  <g transform="translate(371 360)"><use href="#key"/><text class="legend" x="36" y="41" font-size="20">M−</text></g>
+  <g transform="translate(449 360)"><use href="#key"/><use href="#thorn" transform="translate(36 32) scale(.45)"/></g>
+  <!-- row 2 -->
+  <g transform="translate(137 436)"><use href="#key"/><text class="legend" x="36" y="44" font-size="27">%</text></g>
+  <g transform="translate(215 436)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">7</text></g>
+  <g transform="translate(293 436)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">8</text></g>
+  <g transform="translate(371 436)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">9</text></g>
+  <g transform="translate(449 436)"><use href="#key"/><text class="legend" x="36" y="43" font-size="28">÷</text></g>
+  <!-- row 3 -->
+  <g transform="translate(137 512)"><use href="#key"/><text class="legend" x="36" y="44" font-size="28">√</text></g>
+  <g transform="translate(215 512)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">4</text></g>
+  <g transform="translate(293 512)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">5</text></g>
+  <g transform="translate(371 512)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">6</text></g>
+  <g transform="translate(449 512)"><use href="#key"/><text class="legend" x="36" y="43" font-size="27">×</text></g>
+  <!-- row 4 -->
+  <g transform="translate(137 588)"><use href="#key"/><text class="legend" x="36" y="43" font-size="22">+/−</text></g>
+  <g transform="translate(215 588)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">1</text></g>
+  <g transform="translate(293 588)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">2</text></g>
+  <g transform="translate(371 588)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">3</text></g>
+  <g transform="translate(449 588)"><use href="#key"/><text class="legend" x="36" y="43" font-size="28">−</text></g>
+  <!-- bottom row -->
+  <g transform="translate(137 664)"><use href="#key"/><text class="legend red" x="36" y="43" font-size="27">C</text></g>
+  <g transform="translate(215 664)"><use href="#key"/><text class="legend" x="36" y="45" font-size="31">0</text></g>
+  <g transform="translate(293 664)"><use href="#key"/><text class="legend" x="36" y="43" font-size="29">.</text></g>
+  <g transform="translate(371 664)"><use href="#key"/><text class="legend" x="36" y="43" font-size="29">+</text></g>
+  <!-- tall red sigil key -->
+  <g transform="translate(449 664)">
+    <rect x="-2" y="-2" width="76" height="143" rx="11" fill="#030304" stroke="#050506" stroke-width="3"/>
+    <rect x="0" y="0" width="72" height="137" rx="10" fill="url(#key)" stroke="#655861" stroke-width="1.2"/>
+    <path d="M9 6 Q20 2 30 4" fill="none" stroke="#a49ba0" stroke-opacity=".55" stroke-width="1.4"/>
+    <use href="#thorn" transform="translate(36 68) scale(1.3)"/>
+  </g>
+</g>
+
+<!-- Bottom crest and corner curls -->
+<g fill="#111013" stroke="#62545d" stroke-width="2" stroke-linejoin="round">
+  <path d="M101 726 Q126 711 142 738 Q158 757 180 751 L158 778 L129 774 L112 754Z"/>
+  <path d="M499 726 Q474 711 458 738 Q442 757 420 751 L442 778 L471 774 L488 754Z"/>
+  <path d="M248 781 L269 763 L300 744 L331 763 L352 781 L326 789 L300 816 L274 789Z"/>
+</g>
+<use href="#thorn" transform="translate(300 781) scale(.7)"/>
+<path d="M129 735 Q143 751 160 750 M471 735 Q457 751 440 750" class="line"/>
+</svg>

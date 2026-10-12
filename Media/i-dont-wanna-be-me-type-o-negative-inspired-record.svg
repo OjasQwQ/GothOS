@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">I Don't Wanna Be Me — Type O Negative inspired vinyl</title>
+  <desc id="desc">A translucent acid-green record with cloudy lime marbling, fine circular grooves, and a black centre label with restrained white typography.</desc>
+  <defs>
+    <radialGradient id="greenVinyl" cx="38%" cy="30%" r="76%">
+      <stop offset="0" stop-color="#9aff28"/>
+      <stop offset=".36" stop-color="#55df13"/>
+      <stop offset=".72" stop-color="#25ad0b"/>
+      <stop offset="1" stop-color="#087b0b"/>
+    </radialGradient>
+    <linearGradient id="greenSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3ff9c" stop-opacity=".34"/>
+      <stop offset=".25" stop-color="#5bff24" stop-opacity=".08"/>
+      <stop offset=".52" stop-color="#0b6f08" stop-opacity=".2"/>
+      <stop offset=".78" stop-color="#b5ff45" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#004c08" stop-opacity=".35"/>
+    </linearGradient>
+    <filter id="clouds">
+      <feTurbulence type="fractalNoise" baseFrequency=".018" numOctaves="3" seed="23" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="
+        1 0 0 0 .05
+        0 1 0 0 .1
+        0 0 1 0 0
+        0 0 0 .52 0" result="cloud"/>
+      <feBlend in="SourceGraphic" in2="cloud" mode="screen"/>
+    </filter>
+    <clipPath id="recordClip"><circle cx="250" cy="250" r="239"/></clipPath>
+  </defs>
+
+  <!-- Green translucent vinyl -->
+  <circle cx="250" cy="250" r="244" fill="#071006"/>
+  <circle cx="250" cy="250" r="239" fill="url(#greenVinyl)" stroke="#a5ff6b" stroke-opacity=".65" stroke-width="1.4"/>
+  <g clip-path="url(#recordClip)">
+    <rect x="10" y="10" width="480" height="480" fill="#4cda14" filter="url(#clouds)" opacity=".85"/>
+    <rect x="10" y="10" width="480" height="480" fill="url(#greenSheen)"/>
+
+    <!-- Organic translucent green patches -->
+    <g fill="#b5ff38" opacity=".12">
+      <path d="M50 116 Q91 73 126 112 L117 153 L83 164 L55 147 Z"/>
+      <path d="M161 53 Q196 44 214 76 L201 108 L173 114 L153 85 Z"/>
+      <path d="M301 53 Q341 63 348 100 L326 125 L294 108 Z"/>
+      <path d="M391 121 Q425 104 448 141 L431 173 L400 165 Z"/>
+      <path d="M58 250 Q84 219 109 246 L105 278 L73 294 Z"/>
+      <path d="M390 246 Q427 224 445 263 L426 296 L398 282 Z"/>
+      <path d="M91 361 Q120 333 146 362 L137 393 L105 400 Z"/>
+      <path d="M208 407 Q239 378 265 407 L259 439 L224 447 Z"/>
+      <path d="M328 375 Q359 350 385 378 L371 408 L342 409 Z"/>
+    </g>
+
+    <!-- Circular grooves around the label -->
+    <g fill="none" stroke-linecap="round">
+      <circle cx="250" cy="250" r="125" stroke="#d9ff9c" stroke-opacity=".22" stroke-width="1.2"/>
+      <circle cx="250" cy="250" r="132" stroke="#08730b" stroke-opacity=".32"/>
+      <circle cx="250" cy="250" r="139" stroke="#d9ff9c" stroke-opacity=".18"/>
+      <circle cx="250" cy="250" r="147" stroke="#08730b" stroke-opacity=".3"/>
+      <circle cx="250" cy="250" r="155" stroke="#dcffad" stroke-opacity=".17"/>
+      <circle cx="250" cy="250" r="164" stroke="#08730b" stroke-opacity=".27"/>
+      <circle cx="250" cy="250" r="174" stroke="#dcffad" stroke-opacity=".16"/>
+      <circle cx="250" cy="250" r="184" stroke="#08730b" stroke-opacity=".26"/>
+      <circle cx="250" cy="250" r="194" stroke="#dcffad" stroke-opacity=".14"/>
+      <circle cx="250" cy="250" r="204" stroke="#08730b" stroke-opacity=".24"/>
+      <circle cx="250" cy="250" r="214" stroke="#dcffad" stroke-opacity=".13"/>
+      <circle cx="250" cy="250" r="225" stroke="#08730b" stroke-opacity=".2"/>
+      <circle cx="250" cy="250" r="234" stroke="#dcffad" stroke-opacity=".12"/>
+    </g>
+    <path d="M71 151 A198 198 0 0 1 174 64" fill="none" stroke="#e1ff9d" stroke-opacity=".3" stroke-width="9"/>
+    <path d="M333 67 A198 198 0 0 1 431 171" fill="none" stroke="#d9ff9c" stroke-opacity=".2" stroke-width="6"/>
+  </g>
+
+  <!-- Black label -->
+  <circle cx="250" cy="250" r="126" fill="#08090a" stroke="#222523" stroke-width="2"/>
+  <circle cx="250" cy="250" r="117" fill="none" stroke="#454746" stroke-opacity=".8" stroke-width="1"/>
+  <circle cx="250" cy="250" r="109" fill="none" stroke="#2b2e2b" stroke-width="1"/>
+
+  <!-- Label typography -->
+  <g fill="#f3f3ef" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="250" y="177" font-size="13" font-weight="700" letter-spacing="1.3">TYPE O NEGATIVE</text>
+    <text x="250" y="328" font-size="11" font-weight="700" letter-spacing=".35">I DON'T WANNA BE ME</text>
+    <text x="250" y="343" font-size="5.5" letter-spacing=".2">SINGLE • SIDE A</text>
+  </g>
+
+  <!-- Tiny red catalogue mark -->
+  <rect x="126" y="251" width="39" height="12" rx="1" fill="#b20b20"/>
+  <text x="145.5" y="259.5" fill="#fff5ef" font-family="Arial, Helvetica, sans-serif" font-size="4.6" font-weight="700" text-anchor="middle" letter-spacing=".2">ROADRUNNER</text>
+
+  <!-- Large 7-inch spindle opening -->
+  <circle cx="250" cy="250" r="43" fill="#f7f7f4"/>
+  <circle cx="250" cy="250" r="39" fill="#fff"/>
+  <circle cx="250" cy="250" r="126" fill="none" stroke="#b5ff7c" stroke-opacity=".28" stroke-width="1"/>
+  <circle cx="250" cy="250" r="239" fill="none" stroke="#c4ff91" stroke-opacity=".32" stroke-width="1"/>
+</svg>

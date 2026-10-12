@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">Your Name — Wisp inspired record disc</title>
+  <desc id="desc">A dark monochrome record with subtle grooves and a hazy, grainy abstract central label.</desc>
+  <defs>
+    <radialGradient id="vinyl" cx="38%" cy="28%" r="75%">
+      <stop offset="0" stop-color="#34332f"/>
+      <stop offset=".42" stop-color="#171715"/>
+      <stop offset=".78" stop-color="#090909"/>
+      <stop offset="1" stop-color="#242321"/>
+    </radialGradient>
+    <radialGradient id="label" cx="42%" cy="24%" r="88%">
+      <stop offset="0" stop-color="#b7b09b"/>
+      <stop offset=".22" stop-color="#777365"/>
+      <stop offset=".48" stop-color="#34332f"/>
+      <stop offset=".78" stop-color="#141413"/>
+      <stop offset="1" stop-color="#080808"/>
+    </radialGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e0d9c4" stop-opacity=".78"/>
+      <stop offset=".32" stop-color="#9c9787" stop-opacity=".35"/>
+      <stop offset=".7" stop-color="#242421" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".6"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="3" seed="19"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .19"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <clipPath id="discClip"><circle cx="250" cy="250" r="239"/></clipPath>
+    <clipPath id="labelClip"><circle cx="250" cy="250" r="104"/></clipPath>
+  </defs>
+
+  <!-- Vinyl body -->
+  <circle cx="250" cy="250" r="244" fill="#050505"/>
+  <circle cx="250" cy="250" r="239" fill="url(#vinyl)" stroke="#55534c" stroke-opacity=".55" stroke-width="1.5"/>
+
+  <!-- Fine record grooves -->
+  <g fill="none" stroke="#aaa79a" clip-path="url(#discClip)">
+    <circle cx="250" cy="250" r="118" stroke-opacity=".19" stroke-width="1.1"/>
+    <circle cx="250" cy="250" r="124" stroke-opacity=".12"/>
+    <circle cx="250" cy="250" r="130" stroke-opacity=".18"/>
+    <circle cx="250" cy="250" r="137" stroke-opacity=".11"/>
+    <circle cx="250" cy="250" r="144" stroke-opacity=".17"/>
+    <circle cx="250" cy="250" r="151" stroke-opacity=".10"/>
+    <circle cx="250" cy="250" r="158" stroke-opacity=".16"/>
+    <circle cx="250" cy="250" r="165" stroke-opacity=".10"/>
+    <circle cx="250" cy="250" r="172" stroke-opacity=".16"/>
+    <circle cx="250" cy="250" r="179" stroke-opacity=".10"/>
+    <circle cx="250" cy="250" r="186" stroke-opacity=".15"/>
+    <circle cx="250" cy="250" r="193" stroke-opacity=".09"/>
+    <circle cx="250" cy="250" r="200" stroke-opacity=".15"/>
+    <circle cx="250" cy="250" r="207" stroke-opacity=".10"/>
+    <circle cx="250" cy="250" r="214" stroke-opacity=".13"/>
+    <circle cx="250" cy="250" r="221" stroke-opacity=".08"/>
+    <circle cx="250" cy="250" r="228" stroke-opacity=".12"/>
+    <circle cx="250" cy="250" r="234" stroke-opacity=".10"/>
+  </g>
+
+  <!-- Soft reflected light across the vinyl -->
+  <path d="M54 109 C103 28 202 12 294 36 C355 52 399 92 438 144"
+        fill="none" stroke="#d4cfbd" stroke-opacity=".14" stroke-width="18" filter="url(#blur)"/>
+  <path d="M40 345 C118 389 183 420 270 429"
+        fill="none" stroke="#b7b2a2" stroke-opacity=".10" stroke-width="12" filter="url(#blur)"/>
+
+  <!-- Abstract hazy image on the centre label -->
+  <g clip-path="url(#labelClip)">
+    <circle cx="250" cy="250" r="104" fill="url(#label)"/>
+    <ellipse cx="215" cy="186" rx="67" ry="43" fill="#d0c9b4" opacity=".52" filter="url(#blur)"/>
+    <path d="M159 155 C181 123 228 122 250 145 C270 166 259 193 243 215
+             C224 240 216 263 220 289 C225 316 206 344 183 355
+             L131 315 L132 205 Z"
+          fill="#bbb5a3" opacity=".47" filter="url(#softBlur)"/>
+    <path d="M235 141 C267 151 279 179 267 208 C256 234 264 258 276 278
+             C287 300 276 330 256 351 L315 343 L347 262 L313 166 Z"
+          fill="#080808" opacity=".86" filter="url(#softBlur)"/>
+    <path d="M194 150 C203 176 188 199 184 220 C179 246 196 265 185 293"
+          fill="none" stroke="#e1dac7" stroke-opacity=".44" stroke-width="9" filter="url(#softBlur)"/>
+    <path d="M145 230 C168 218 182 228 187 250 C192 273 175 290 169 310"
+          fill="none" stroke="#e4ddca" stroke-opacity=".24" stroke-width="14" filter="url(#blur)"/>
+    <ellipse cx="285" cy="155" rx="36" ry="19" fill="#ded6c2" opacity=".18" filter="url(#blur)"/>
+    <rect x="146" y="146" width="208" height="208" fill="#99917e" opacity=".18" filter="url(#grain)"/>
+    <circle cx="250" cy="250" r="103" fill="none" stroke="#d3ccba" stroke-opacity=".24"/>
+  </g>
+
+  <!-- Label ring and spindle hole -->
+  <circle cx="250" cy="250" r="108" fill="none" stroke="#c2bba8" stroke-opacity=".32" stroke-width="1.2"/>
+  <circle cx="250" cy="250" r="8" fill="#050505" stroke="#c9c1ad" stroke-opacity=".55" stroke-width="1.3"/>
+  <circle cx="250" cy="250" r="3" fill="#777366" opacity=".7"/>
+
+  <!-- Small etched marks, intentionally understated -->
+  <path d="M250 116 A134 134 0 0 1 384 250" fill="none" stroke="#e4dfd1" stroke-opacity=".09" stroke-width="1"/>
+  <circle cx="250" cy="250" r="239" fill="none" stroke="#c9c2b0" stroke-opacity=".16" stroke-width="1"/>
+</svg>

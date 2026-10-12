@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">Bite My Hip — Bauhaus inspired red vinyl</title>
+  <desc id="desc">A translucent-looking deep crimson record with dark marbled flecks, fine grooves, and a minimalist black centre label with cream geometric linework.</desc>
+  <defs>
+    <radialGradient id="vinylBase" cx="38%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#b80013"/>
+      <stop offset=".38" stop-color="#9e0010"/>
+      <stop offset=".72" stop-color="#76000b"/>
+      <stop offset="1" stop-color="#3b0007"/>
+    </radialGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9a9c" stop-opacity=".34"/>
+      <stop offset=".22" stop-color="#ff4b55" stop-opacity=".06"/>
+      <stop offset=".48" stop-color="#180005" stop-opacity=".28"/>
+      <stop offset=".72" stop-color="#ff6a73" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#130003" stop-opacity=".42"/>
+    </linearGradient>
+    <filter id="marble">
+      <feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="31" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="
+        1 0 0 0 .18
+        0 .18 0 0 0
+        0 0 .18 0 0
+        0 0 0 .7 0" result="darkNoise"/>
+      <feBlend in="SourceGraphic" in2="darkNoise" mode="multiply"/>
+    </filter>
+    <clipPath id="recordClip"><circle cx="250" cy="250" r="239"/></clipPath>
+  </defs>
+
+  <!-- Disc silhouette and translucent crimson base -->
+  <circle cx="250" cy="250" r="244" fill="#080506"/>
+  <circle cx="250" cy="250" r="239" fill="url(#vinylBase)" stroke="#d12b35" stroke-opacity=".6" stroke-width="1.4"/>
+  <g clip-path="url(#recordClip)">
+    <rect x="8" y="8" width="484" height="484" fill="#97000f" filter="url(#marble)" opacity=".88"/>
+    <rect x="8" y="8" width="484" height="484" fill="url(#sheen)"/>
+
+    <!-- Uneven marbled patches -->
+    <g fill="#270006" opacity=".43">
+      <path d="M105 104 Q130 76 151 105 L144 132 L122 142 L111 127 Z"/>
+      <path d="M198 70 Q221 81 214 107 L191 125 L182 105 Z"/>
+      <path d="M308 77 Q342 95 328 124 L307 140 L294 112 Z"/>
+      <path d="M382 141 Q409 163 389 187 L370 183 L365 159 Z"/>
+      <path d="M82 218 Q110 202 123 228 L109 250 L87 247 Z"/>
+      <path d="M397 242 Q424 222 430 250 L413 278 L394 270 Z"/>
+      <path d="M104 340 Q126 320 145 344 L133 368 L111 370 Z"/>
+      <path d="M188 412 Q208 387 229 408 L222 436 L195 440 Z"/>
+      <path d="M322 393 Q346 374 362 399 L351 421 L329 422 Z"/>
+      <path d="M374 328 Q395 307 415 330 L406 354 L385 357 Z"/>
+    </g>
+
+    <!-- Vinyl grooves: subtle concentric rings -->
+    <g fill="none" stroke-linecap="round">
+      <circle cx="250" cy="250" r="112" stroke="#ff5963" stroke-opacity=".18" stroke-width="1.2"/>
+      <circle cx="250" cy="250" r="119" stroke="#250006" stroke-opacity=".46"/>
+      <circle cx="250" cy="250" r="126" stroke="#ff8b91" stroke-opacity=".14"/>
+      <circle cx="250" cy="250" r="134" stroke="#260006" stroke-opacity=".42"/>
+      <circle cx="250" cy="250" r="143" stroke="#ff858c" stroke-opacity=".16"/>
+      <circle cx="250" cy="250" r="152" stroke="#210005" stroke-opacity=".44"/>
+      <circle cx="250" cy="250" r="162" stroke="#ff777f" stroke-opacity=".13"/>
+      <circle cx="250" cy="250" r="173" stroke="#230006" stroke-opacity=".4"/>
+      <circle cx="250" cy="250" r="184" stroke="#ff7b83" stroke-opacity=".13"/>
+      <circle cx="250" cy="250" r="195" stroke="#260006" stroke-opacity=".38"/>
+      <circle cx="250" cy="250" r="206" stroke="#ff858c" stroke-opacity=".12"/>
+      <circle cx="250" cy="250" r="217" stroke="#260006" stroke-opacity=".35"/>
+      <circle cx="250" cy="250" r="228" stroke="#ff8b91" stroke-opacity=".12"/>
+    </g>
+
+    <!-- Long, soft reflected streaks -->
+    <path d="M75 147 A198 198 0 0 1 178 67" fill="none" stroke="#ff7d85" stroke-opacity=".24" stroke-width="13"/>
+    <path d="M332 71 A199 199 0 0 1 429 172" fill="none" stroke="#ff8c92" stroke-opacity=".15" stroke-width="8"/>
+    <path d="M68 314 A198 198 0 0 0 138 420" fill="none" stroke="#ff6d76" stroke-opacity=".16" stroke-width="7"/>
+  </g>
+
+  <!-- Minimal Bauhaus-style centre label -->
+  <circle cx="250" cy="250" r="76" fill="#080909" stroke="#e9e3d7" stroke-width="2.4"/>
+  <circle cx="250" cy="250" r="68" fill="none" stroke="#d9d4c9" stroke-opacity=".5" stroke-width="1"/>
+  <g fill="#e8e3d8">
+    <path d="M216 209 H246 V218 H226 V236 H216 Z"/>
+    <rect x="246" y="209" width="7" height="67"/>
+    <path d="M253 267 H274 V276 H253 Z"/>
+    <path d="M253 286 H276 V295 H253 Z"/>
+    <path d="M226 295 H253 V302 H226 Z"/>
+  </g>
+  <path d="M250 183 V317" stroke="#e8e3d8" stroke-width="2"/>
+  <circle cx="250" cy="250" r="8.5" fill="#c9c4bd"/>
+  <circle cx="250" cy="250" r="4" fill="#f4f0e8"/>
+  <circle cx="250" cy="250" r="239" fill="none" stroke="#f1a1a4" stroke-opacity=".25" stroke-width="1"/>
+</svg>
