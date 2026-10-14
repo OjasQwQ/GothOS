@@ -478,4 +478,74 @@ document.getElementById('googleSearchForm').addEventListener('submit', function(
     }
 });
 
+// Mouse following pet ___________________________________________________________________________________
 
+const bat = document.getElementById('bat');
+
+if (bat) {
+    const cursorOffsetX = 24;
+    const cursorOffsetY = 30;
+    const speed = 0.09;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let batX = mouseX + cursorOffsetX;
+    let batY = mouseY + cursorOffsetY;
+
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
+
+    window.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    });
+
+    function animate() {
+        const maxX = Math.max(0, window.innerWidth - bat.offsetWidth);
+        const maxY = Math.max(0, window.innerHeight - bat.offsetHeight);
+        const targetX = clamp(mouseX + cursorOffsetX, 0, maxX);
+        const targetY = clamp(mouseY + cursorOffsetY, 0, maxY);
+
+        batX += (targetX - batX) * speed;
+        batY += (targetY - batY) * speed;
+
+        let tilt = 0;
+        let facingLeft = false;
+        for (let i = 0; i < 3; i++) {
+            const centerX = batX + bat.offsetWidth / 2;
+            const centerY = batY + bat.offsetHeight / 2;
+            facingLeft = mouseX < centerX;
+            tilt = Math.atan2(mouseY - centerY, Math.abs(mouseX - centerX));
+            tilt = clamp(tilt, -Math.PI / 4, Math.PI / 4);
+
+            const rotatedWidth = Math.abs(bat.offsetWidth * Math.cos(tilt)) +
+                Math.abs(bat.offsetHeight * Math.sin(tilt));
+            const rotatedHeight = Math.abs(bat.offsetWidth * Math.sin(tilt)) +
+                Math.abs(bat.offsetHeight * Math.cos(tilt));
+            const minX = (rotatedWidth - bat.offsetWidth) / 2;
+            const minY = (rotatedHeight - bat.offsetHeight) / 2;
+            const maxX = window.innerWidth - (rotatedWidth + bat.offsetWidth) / 2;
+            const maxY = window.innerHeight - (rotatedHeight + bat.offsetHeight) / 2;
+
+            batX = clamp(batX, minX, maxX);
+            batY = clamp(batY, minY, maxY);
+        }
+
+        const centerX = batX + bat.offsetWidth / 2;
+        const centerY = batY + bat.offsetHeight / 2;
+        facingLeft = mouseX < centerX;
+        tilt = clamp(
+            Math.atan2(mouseY - centerY, Math.abs(mouseX - centerX)),
+            -Math.PI / 4,
+            Math.PI / 4
+        );
+
+        bat.style.left = `${batX}px`;
+        bat.style.top = `${batY}px`;
+        bat.style.transform = `rotate(${facingLeft ? -tilt : tilt}rad) scaleX(${facingLeft ? -1 : 1})`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
