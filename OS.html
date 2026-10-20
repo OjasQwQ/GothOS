@@ -40,6 +40,7 @@
             <p><img class="logo" id="musicopen" src="Media\CD1.svg" alt="Open music window"></p>
             <p><img class="logo" id="notesopen" src="Media\book-journa-notes.svg"></p>
             <p><img class="logo" id="calcopen" src="Media\gothic-calculator.svg"></p>
+            <p><img class="logo" id="todoopen" src="Media\to-do.svg"></p>
         </div>
 
         <div>
@@ -162,6 +163,19 @@
             </div>
         </div>
 
+        <div class="todo-window" id="todo-window">
+            <div class="todowindow-header" id="todowindow-header">
+                <span> To-Do </span>
+                <button type="button" id="todoclose" aria-label="Close To-Do Window"> x </button>
+            </div>
+            <div class="todowindow-content">
+                <form id="todoForm" class="todo-form">
+                    <input type="text" id="todoInput" placeholder="Add a task..." autocomplete="off" />
+                    <button type="submit">+</button>
+                </form>
+                <ul id="todoList" class="todo-list"></ul>
+            </div>
+        </div>
 
 
         <script src="music.js"></script>

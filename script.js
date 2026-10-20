@@ -478,6 +478,95 @@ document.getElementById('googleSearchForm').addEventListener('submit', function(
     }
 });
 
+// To-Do__________________________________________________________________________________________________
+
+// To-Do Window ____________________________________________________________________________________
+
+var todoScreen = document.getElementById("todo-window");
+var todoScreenHeader = document.getElementById("todowindow-header");
+var todoScreenClose = document.querySelector("#todoclose");
+var todoScreenOpen = document.querySelector("#todoopen");
+var todoForm = document.getElementById("todoForm");
+var todoInput = document.getElementById("todoInput");
+var todoList = document.getElementById("todoList");
+
+var todos = [];
+try {
+    todos = JSON.parse(localStorage.getItem("gothos-todos")) || [];
+} catch (e) {
+    todos = [];
+}
+
+function saveTodos() {
+    try {
+        localStorage.setItem("gothos-todos", JSON.stringify(todos));
+    } catch (e) {}
+}
+
+function renderTodos() {
+    todoList.innerHTML = "";
+
+    todos.forEach(function(todo, index) {
+        var li = document.createElement("li");
+        li.className = "todo-item" + (todo.done ? " done" : "");
+
+        var label = document.createElement("span");
+        label.textContent = todo.text;
+        label.addEventListener("click", function() {
+            todos[index].done = !todos[index].done;
+            saveTodos();
+            renderTodos();
+        });
+
+        var remove = document.createElement("button");
+        remove.type = "button";
+        remove.textContent = "×";
+        remove.setAttribute("aria-label", "Delete task");
+        remove.addEventListener("click", function() {
+            todos.splice(index, 1);
+            saveTodos();
+            renderTodos();
+        });
+
+        li.appendChild(label);
+        li.appendChild(remove);
+        todoList.appendChild(li);
+    });
+}
+
+if (todoForm) {
+    todoForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var text = todoInput.value.trim();
+        if (!text) {
+            return;
+        }
+        todos.push({ text: text, done: false });
+        todoInput.value = "";
+        saveTodos();
+        renderTodos();
+    });
+}
+
+if (todoScreen && todoScreenHeader) {
+    dragElement(todoScreen, todoScreenHeader);
+}
+
+if (todoScreenClose && todoScreen) {
+    todoScreenClose.addEventListener("click", function() {
+        closeWindow(todoScreen, todoScreenOpen);
+    });
+}
+
+if (todoScreenOpen && todoScreen) {
+    todoScreenOpen.addEventListener("click", function() {
+        openWindow(todoScreen, todoScreenOpen);
+    });
+}
+
+addWindowTapHandling(todoScreen);
+renderTodos();
+
 // Mouse following pet ___________________________________________________________________________________
 
 const bat = document.getElementById('bat');
