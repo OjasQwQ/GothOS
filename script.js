@@ -23,9 +23,9 @@
     }
 
 //  Heading Click _______________________________________________________________________________________________________________________________
-    var heading = document.getElementById("heading");
-    if (heading) {
-        heading.addEventListener("click", function() {
+    var homescreen = document.getElementById("home-screen");
+    if (homescreen) {
+        homescreen.addEventListener("click", function() {
             window.location.href = "OS.html";
         });
     }
